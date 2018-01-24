@@ -1,5 +1,5 @@
 //定义语法版本
-syntax="proto3"
+syntax="proto3";
 
 //定义Stub代码选项
 option java_package="com.tangcheng.rpc.grpc.hello.api";

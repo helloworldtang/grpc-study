@@ -11,5 +11,11 @@
 
     <artifactId>grpc-hello-server</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.tangcheng.rpc.grpc</groupId>
+            <artifactId>grpc-hello-api</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
