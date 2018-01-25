@@ -15,12 +15,12 @@ public class HelloServer {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         Server server = ServerBuilder
-                .forPort(port)
-                .addService(new HelloServiceImpl())
+                .forPort(port)//设置RPC端口号
+                .addService(new HelloServiceImpl()) //添加服务实现实例对象
                 .build()
                 .start();
         System.out.println("Server started,listening on " + port);
-        server.awaitTermination();
+        server.awaitTermination();//等待RPC服务器终止，从而停止服务端应用程序
     }
 
 }

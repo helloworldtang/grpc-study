@@ -22,9 +22,9 @@ public class HelloServiceImpl extends HelloServiceGrpc.HelloServiceImplBase {
         } catch (Exception e) {
             responseObserver.onError(e);
         } finally {
-            responseObserver.onNext(response);
+            responseObserver.onNext(response);//将HelloResponse对象添加到StreamObserver参数中
         }
-        responseObserver.onCompleted();
+        responseObserver.onCompleted();//结束整个响应过程
     }
 
 }

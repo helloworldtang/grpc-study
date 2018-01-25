@@ -18,11 +18,11 @@ public class HelloClient {
     public static void main(String[] args) {
         ManagedChannel channel = ManagedChannelBuilder
                 .forAddress(host, port)
-                .usePlaintext(true)
+                .usePlaintext(true)//使用纯文本方式进行数据传输
                 .build();
 
         try {
-            HelloServiceGrpc.HelloServiceBlockingStub helloServiceStub = HelloServiceGrpc.newBlockingStub(channel);
+            HelloServiceGrpc.HelloServiceBlockingStub helloServiceStub = HelloServiceGrpc.newBlockingStub(channel);//使用阻塞式的Stub
             HelloRequest request = HelloRequest
                     .newBuilder()
                     .setName("world")
@@ -30,7 +30,7 @@ public class HelloClient {
             HelloResponse response = helloServiceStub.say(request);
             System.out.println(response.getMessage());
         } finally {
-            channel.shutdown();
+            channel.shutdown();//停止RPC客户端应用程序
         }
 
     }
