@@ -20,7 +20,6 @@ public class HelloClient {
                 .forAddress(host, port)
                 .usePlaintext(true)//使用纯文本方式进行数据传输
                 .build();
-
         try {
             HelloServiceGrpc.HelloServiceBlockingStub helloServiceStub = HelloServiceGrpc.newBlockingStub(channel);//使用阻塞式的Stub
             HelloRequest request = HelloRequest
@@ -32,7 +31,6 @@ public class HelloClient {
         } finally {
             channel.shutdown();//停止RPC客户端应用程序
         }
-
     }
 
 }
